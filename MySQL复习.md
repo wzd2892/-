@@ -1,6 +1,6 @@
 # MySQL
 
-<img src="img/image-20210219180724251.png" alt="image-20210219180724251" width="200" height="200" style="zoom:33%;" />
+<img src="img/image-20210219180724251.png" alt="image-20210219180724251" width="33%" height="33%" style="zoom:33%;" />
 
 
 
