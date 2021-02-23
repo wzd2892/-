@@ -1,6 +1,6 @@
 # MySQL
 
-<img src="img/image-20210219180724251.png" alt="image-20210219180724251" width="33%" height="33%" style="zoom:33%;" />
+<img src="img/image-20210219180724251.png" alt="image-20210219180724251" width = "33%" height = "33%" />
 
 
 
@@ -29,7 +29,7 @@
 
 	将数据持久化存入磁盘中，如存入机械硬盘、SSD固态硬盘、亦或者是它们的磁盘阵列矩阵中
 
-<img src="img/image-20210219183607014.png" alt="image-20210219183607014" style="zoom:30%;" />
+<img src="img/image-20210219183607014.png" alt="image-20210219183607014" width = "33%" height = "33%" />
 
 
 
@@ -106,7 +106,7 @@ CREATE TABLE mytable(
 
 #### 3.3 B-Tree  （多叉树）
 
-<img src="img/image-20210219185907506.png" alt="image-20210219185907506" style="zoom: 25%;" />
+<img src="img/image-20210219185907506.png" alt="image-20210219185907506" width = "33%" height = "33%" />
 
 **3-阶b - Tree**
 
@@ -117,7 +117,7 @@ CREATE TABLE mytable(
 - root 至少有2个子节点
 - 每一个节点最多有m个子节点 （m>=2） 
 - 非根、 叶节点， 最少有 ceil(m/2)个子节点
--  所有叶子节点都处于同一层
+- 所有叶子节点都处于同一层
 - 每一个非叶节点有n个关键字
 	- 关键字升序排列
 	- 关键字个数n 满足：  [ceil(m/2)-1]<= n <= m-1
@@ -129,7 +129,7 @@ CREATE TABLE mytable(
 
 #### 3.4 B+ Tree
 
-<img src="img/image-20210222222358776.png" alt="image-20210222222358776" style="zoom:25%;" />
+<img src="img/image-20210222222358776.png" alt="image-20210222222358776" width = "33%" height = "33%" />
 
 **特征**
 
@@ -168,7 +168,7 @@ CREATE TABLE mytable(
 
 #### 3.6 BitMap 神器
 
-<img src="img/image-20210222225223637.png" alt="image-20210222225223637" style="zoom:25%;" />
+<img src="img/image-20210222225223637.png" alt="image-20210222225223637" width = "33%" height = "33%" />
 
 某个属性只有个值  ： 性别 男女
 
@@ -182,7 +182,7 @@ CREATE TABLE mytable(
 
 ### 4. 密集索引和稀疏索引的区别【聚焦索引、 非聚焦索引】
 
-- <img src="img/image-20210222225635851.png" alt="image-20210222225635851" style="zoom:25%;" />
+- <img src="img/image-20210222225635851.png" alt="image-20210222225635851" width = "33%" height = "33%" />
 
 **密集索引：** 密集索引文件中， 每一个搜索码值都对应一个索引值
 
@@ -194,7 +194,7 @@ CREATE TABLE mytable(
 **稀疏索引：** 稀疏索引文件中， 只为索引码的某些值建立索引项
 
 - 叶子节点： 保存键位信息和该行数据的地址  【有的仅保存键位信息及其主键】 ，
--  需要通过主键和地址进一步定位数据
+- 需要通过主键和地址进一步定位数据
 
 
 
@@ -205,7 +205,7 @@ CREATE TABLE mytable(
 - 如果没有以上条件， innodb会内部自定义一个**隐藏主键**   密集索引 6字节的主键
 - 非主键索引存储的是相关键位以及其对应的主键值，包含两次查询
 
-<img src="img/image-20210222230806716.png" alt="image-20210222230806716" style="zoom:33%;" />
+<img src="img/image-20210222230806716.png" alt="image-20210222230806716" width = "33%" height = "33%" />
 
 
 
@@ -312,7 +312,7 @@ InnoDB 有两个数据文件
 
 		- type  ： index   >  all   说明是全表扫描
 		- extra :   出现以下两个
-		- <img src="img/image-20210223112258831.png" alt="image-20210223112258831" style="zoom:25%;" />
+		- <img src="img/image-20210223112258831.png" alt="image-20210223112258831" width = "33%" height = "33%"/>
 
 - 使用索引加速查询 修改sql， 让sql走索引
 
@@ -365,7 +365,7 @@ Mysql默认使用 查询优化器来进行查询优化，尽可能使用索引 �
 	- mysql会一直**向右匹配直到遇到范围查询** 【 >  <  between   like 】
 		- (a, b, c, d)     a=3  and  b = 4 and  c> 5 and d = 6
 		- 那么  d是用不到索引的，  如果建立   (a, b, d, c) 则是可以
-	-  = 和 in 中是可以乱序的，   **优化器可以识别**
+	- = 和 in 中是可以乱序的，   **优化器可以识别**
 
 **成因：**
 
@@ -377,7 +377,7 @@ Mysql默认使用 查询优化器来进行查询优化，尽可能使用索引 �
 
 
 
-<img src="img/image-20210223133555532.png" alt="image-20210223133555532" style="zoom: 25%;" />
+<img src="img/image-20210223133555532.png" alt="image-20210223133555532" width = "33%" height = "33%" />
 
 
 
@@ -439,7 +439,7 @@ MYISAM：
 
 	**排它锁（(Exclusive lock,简记为X锁)）又称为写锁**，若事务T对数据对象A加上X锁，则只允许T读取和修改A，其它任何事务都不能再对A加任何类型的锁，直到T释放A上的锁。它防止任何其它事务获取资源上的锁，直到在事务的末尾将资源上的原始锁释放为止。在更新操作(INSERT、UPDATE 或 DELETE)过程中始终应用排它锁。
 
-<img src="img/image-20210223152416660.png" alt="image-20210223152416660" style="zoom:25%;" />
+<img src="img/image-20210223152416660.png" alt="image-20210223152416660" width = "33%" height = "33%" />
 
 
 
@@ -517,18 +517,18 @@ ACID
 
 - 丢失更新——  一个事务A修改后 另一个事务B修改       事务B修改的更新丢失
 	- Mysql完全避免了
-	- <img src="img/image-20210223162655188.png" alt="image-20210223162655188" style="zoom:25%;" />
+	- <img src="img/image-20210223162655188.png" alt="image-20210223162655188" width = "33%" height = "33%" />
 - 脏读  ： **读未提交**  read-commit 级别以上可以避免
 	- 读取其他事务中， 没有提交的数据,并在这个数据的基础上操作了数据库， 操作可能是错误的
 - 不可重复读：**读已提交**  在一个事务中， 两次读取到的数据不一致【在这个时间有数据被事务B修改并提交】
 	- read-repeat可以解决 【可重复读可以解决】
 - 幻读:   是事务A 锁了几行后， 事务B**插入**了一些数据并提交， 事务A之后查询发现多了几条不存在的数据。
 	-  **串行读 可以解决**
-	- **InnoDB** 在 **可重复读的隔离级别下  解决了幻读**
+	-  **InnoDB** 在 **可重复读的隔离级别下  解决了幻读**
 
 
 
-<img src="img/image-20210223170123775.png" alt="image-20210223170123775" style="zoom:33%;" />
+<img src="img/image-20210223170123775.png" alt="image-20210223170123775" width = "33%" height = "33%" />
 
 
 
@@ -558,7 +558,7 @@ update, delete, insert 【默认加排他锁】
 
 
 
-<img src="img/image-20210223174630686.png" alt="image-20210223174630686" style="zoom:25%;" />
+<img src="img/image-20210223174630686.png" alt="image-20210223174630686" width = "33%" height = "33%" />
 
 
 
@@ -607,7 +607,7 @@ DB_ROW_ID		行号：      随着新行插入单调递增的行id   不会出现�
 	- update undolog
 		- Update undolog 事务需要， 快照读也需要， 快照读不需要才回删除
 
-	<img src="img/image-20210223181639209.png" alt="image-20210223181639209" style="zoom:25%;" />
+	<img src="img/image-20210223181639209.png" alt="image-20210223181639209" width = "33%" height = "33%" />
 
 - read view 可见性算法 
 
